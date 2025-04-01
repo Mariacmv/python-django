@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'app',
 ]
 
 MIDDLEWARE = [
@@ -58,7 +59,7 @@ ROOT_URLCONF = 'setup.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -120,6 +121,13 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
 STATIC_URL = 'static/'
+
+STATICFILES_DIRS = [ #todos os arquivos estáticos estão aqui
+    os.path.join(BASE_DIR, 'setup/static') #diretório principl e busque a pasta static (passei o caminho dele)
+] #criando uma variável para os arquivos do dir. Indica o diretório para que o django consiga manipular todos os arquivos estáticos
+
+#passa o caminho absoluto do diretório para que o python pegue os arquivos estáticos
+STATIC_ROOT = os.path.join(BASE_DIR, 'static') #então o django vai criar uma pasta nova chamada 'static' com os arquivos que pegar e armazenar os arquivos estáticos
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
