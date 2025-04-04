@@ -19,5 +19,5 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls), #rota principal
-    path('', include('app.urls (2)')), #chamo a função view - isolo o index
+    path('', include('app.urls')), #chamo a função view - isolo o index
 ]

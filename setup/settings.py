@@ -127,7 +127,7 @@ STATICFILES_DIRS = [ #todos os arquivos estáticos estão aqui
 ] #criando uma variável para os arquivos do dir. Indica o diretório para que o django consiga manipular todos os arquivos estáticos
 
 #passa o caminho absoluto do diretório para que o python pegue os arquivos estáticos
-STATIC_ROOT = os.path.join(BASE_DIR, 'static') #então o django vai criar uma pasta nova chamada 'static' com os arquivos que pegar e armazenar os arquivos estáticos
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles') #então o django vai criar uma pasta nova chamada 'static' com os arquivos que pegar e armazenar os arquivos estáticos
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
