@@ -1,4 +1,4 @@
-from django.shortcuts import render #é renderizar
+from django.shortcuts import render, get_object_or_404 #é renderizar
 from app.models import Fotografia #importo todos os objetos de models
 # # Create your views here.
 
@@ -7,8 +7,9 @@ def index(request):
     print('Carregando a página INDEX!')
     return render(request, 'app/index.html', {"cards": fotografias}) #modifico para passar o html e a view renderiza o código
 
-def imagem(request):
+def imagem(request, foto_id): #função view
     print('Carregando a página IMAGEM!')
-    return render(request, 'app/imagem.html')
+    fotografia = get_object_or_404(Fotografia, pk=foto_id)
+    return render(request, 'app/imagem.html', {"fotografia": fotografia})
 
 
