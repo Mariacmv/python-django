@@ -14,12 +14,12 @@ class Fotografia(models.Model): #herda a biblioteca
     legenda = models.CharField(max_length=150, null=False, blank=False)
     categoria = models.CharField(max_length=100, choices=OPCOES_CATEGORIA, default='')
     descricao = models.TextField(null=False, blank=False) #textfield porque é maior
-    foto = models.CharField(max_length=100, null=False, blank=False)
+    foto = models.ImageField(upload_to="fotos/%Y/%m/%d/", blank=True)
     publicada = models.BooleanField(default=False) #para o usuário adicionar itens ao site. É padrão false
     data_fotografia = models.DateTimeField(default=datetime.now, blank=False)#incrementando a data de adição
     
     #uma boa prática é devolver o nome de cada um dos itens através de uma função
     def __str__(self):
-        return f'Fotografia [nome={self.nome}]'
+        return self.nome
     
 

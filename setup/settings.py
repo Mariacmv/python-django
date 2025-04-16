@@ -129,6 +129,10 @@ STATICFILES_DIRS = [ #todos os arquivos estáticos estão aqui
 #passa o caminho absoluto do diretório para que o python pegue os arquivos estáticos
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles') #então o django vai criar uma pasta nova chamada 'static' com os arquivos que pegar e armazenar os arquivos estáticos
 
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+MEDIA_URL = "/media/"
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 

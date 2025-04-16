@@ -1,3 +1,4 @@
+<!--1- Copia o código do html para o buscar-->
 {% extends 'app/base.html' %}
 {% load static %}
 {% block content %}
@@ -64,8 +65,8 @@
                                 </div>
                             </li>
                             {% endfor %}
-                            {% else %}
-                            <div class="imagem__texto">
+                            {% else %} <!--2- Adiciona a mensagem de caso não encontre na busca-->
+                            <div class="imagem__texto"> <!--Mensagem em caso de não existirem tais informações do buscar-->
                                 <p>Fotografias não encontradas</p>
                             </div>
                             {% endif %}
