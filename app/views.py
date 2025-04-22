@@ -1,6 +1,5 @@
 from django.shortcuts import render, get_object_or_404 #é renderizar
 from app.models import Fotografia #importo todos os objetos de models
-# # Create your views here.
 
 def index(request):
     fotografias = Fotografia.objects.order_by("data_fotografia").filter(publicada=True) #coloquei uma lista com todos os objetos criados em model
