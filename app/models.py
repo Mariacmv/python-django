@@ -1,5 +1,6 @@
 from django.db import models
 from datetime import datetime
+from django.contrib.auth.models import User
 
 class Fotografia(models.Model): #herda a biblioteca
     
@@ -17,6 +18,13 @@ class Fotografia(models.Model): #herda a biblioteca
     foto = models.ImageField(upload_to="fotos/%Y/%m/%d/", blank=True)
     publicada = models.BooleanField(default=False) #para o usuário adicionar itens ao site. É padrão false
     data_fotografia = models.DateTimeField(default=datetime.now, blank=False)#incrementando a data de adição
+    usuario = models.ForeignKey(
+        to = User, #associei à tabela de usuário
+        on_delete = models.SET_NULL,#quando o usuário for deletado
+        null = True, #ou seja, um usuário pode ser vazio
+        blank = False, 
+        related_name = "user", #pra localizar a tabela 
+    )
     
     #uma boa prática é devolver o nome de cada um dos itens através de uma função
     def __str__(self):

@@ -403,24 +403,3 @@ table {
     border-color: #d3d6d8;
 }
 
-/* Só pra deixar ainda mais lindão, animaçãozinha suave */
-.alert {
-    animation: fadeIn 0.5s ease-in-out;
-}
-
-/* Keyframes da animação */
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(-10px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-/* (Opcional) Se quiser que a mensagem suma sozinha depois de uns segundos: */
-#messages {
-    animation: fadeOut 5s forwards;
-    animation-delay: 3s;
-}
-
-/* Keyframes do fadeOut */
-@keyframes fadeOut {
-    to { opacity: 0; visibility: hidden; }
-}
