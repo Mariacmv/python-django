@@ -37,9 +37,9 @@ def cadastro(request):
     if request.method == 'POST': #se o método de requisição for POST (dar uma pesquisada sobre), faça:
         form = CadastroForms(request.POST) #pego as informações do formulário
         if form.is_valid():
-            if form['senha1'].value() != form['senha2'].value():#puxo as informações passadas ao formulário e comparo com a senha 2 para verificação 
-                messages.error(request, 'Senhas não correspondem!')
-                return redirect('cadastro')
+            # if form['senha1'].value() != form['senha2'].value():#puxo as informações passadas ao formulário e comparo com a senha 2 para verificação 
+            #     messages.error(request, 'Senhas não correspondem!')
+            #     return redirect('cadastro')
             nome = form["nome_cadastro"].value()
             email = form["email"].value()
             senha = form["senha1"].value()
